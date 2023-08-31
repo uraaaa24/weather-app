@@ -25,6 +25,8 @@ public class WeatherController {
     @GetMapping("/weather")
     public String getWeather(String region) {
         String targetUrl = WEATHER_URL + "/weather?q=Japan&lang=ja&appid=" + API_KEY;
+
+        // TODO:なぜ動くかの理由を深掘りする
         HttpEntity<?> entity = new HttpEntity<>(new HttpHeaders());
         ResponseEntity<String> response = restTemplate.exchange(targetUrl, HttpMethod.GET, entity, String.class);
         return response.getBody();
