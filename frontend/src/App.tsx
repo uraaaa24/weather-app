@@ -1,8 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import logo from './logo.svg';
 
 function App() {
+
+  useEffect(() => {
+		// APIをfetchする(呼び出す)
+		fetch("http://localhost:8080/api/demo", { method: "GET" })
+			// レスポンスのデータ形式をjsonに設定
+			.then((res) => res.json())
+			// APIから渡されるレスポンスデータ(data)をコンソールに表示する
+			.then((data) => {
+				console.log(data);
+			});
+	}, []);
+
   return (
     <div className="App">
       <header className="App-header">
