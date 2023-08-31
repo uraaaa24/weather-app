@@ -20,12 +20,13 @@ public class WeatherController {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    String example = "https://api.openweathermap.org/data/2.5/weather?q=Japan&appid=5efc057812bbae14ca0092c3e5edc0da";
+    String example = "https://api.openweathermap.org/data/2.5/weather?q=Japan&lang=ja&appid=5efc057812bbae14ca0092c3e5edc0da";
     
     @GetMapping("/weather")
-    public String getWeather() {
+    public String getWeather(String region) {
+        String targetUrl = WEATHER_URL + "/weather?q=Japan&lang=ja&appid=" + API_KEY;
         HttpEntity<?> entity = new HttpEntity<>(new HttpHeaders());
-        ResponseEntity<String> response = restTemplate.exchange(example, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(targetUrl, HttpMethod.GET, entity, String.class);
         return response.getBody();
     }
 }
