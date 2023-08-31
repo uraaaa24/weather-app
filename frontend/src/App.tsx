@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
 		// APIをfetchする(呼び出す)
-		fetch("http://localhost:8080/api/demo", { method: "GET" })
+		fetch("http://localhost:8080/api/weather", { method: "GET" })
 			// レスポンスのデータ形式をjsonに設定
 			.then((res) => res.json())
 			// APIから渡されるレスポンスデータ(data)をコンソールに表示する
