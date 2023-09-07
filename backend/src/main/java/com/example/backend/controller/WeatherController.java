@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 public class WeatherController {
 
     private static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5";
-    private static final String API_KEY     = "5efc057812bbae14ca0092c3e5edc0da";
+    private static final String API_KEY     = "xxx";
 
     private RestTemplate restTemplate = new RestTemplate();
 
